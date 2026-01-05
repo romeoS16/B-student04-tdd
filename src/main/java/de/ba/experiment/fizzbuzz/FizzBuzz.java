@@ -13,6 +13,21 @@ public class FizzBuzz {
 
     public static String[] fizzBuzz(int n) {
         // TODO: implementieren
-        return new String[0];
+        String[] fizzBuzz = new String[n];
+        for (int i = 1; i <= n; i++) {
+            if (n<1) {
+                return new String[0];
+            }
+            else if (i % 3 == 0 && i % 5 == 0) {
+                fizzBuzz[i - 1] = "FizzBuzz";
+            } else if (i % 3 == 0) {
+                fizzBuzz[i - 1] = "Fizz";
+            } else if (i % 5 == 0) {
+                fizzBuzz[i - 1] = "Buzz";
+            } else {
+                fizzBuzz[i - 1] = String.valueOf(i);
+            }
+        }
+        return fizzBuzz;
     }
 }

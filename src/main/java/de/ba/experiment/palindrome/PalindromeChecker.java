@@ -15,6 +15,15 @@ public class PalindromeChecker {
 
     public static boolean isPalindrome(String text) {
         // TODO: implementieren
-        return false;
+        text = text.toLowerCase();
+        text = text.replaceAll(" ", "");
+        for (int i = 0; i < text.length(); i++) {
+            for (int j = text.length(); j == 0; j--) {
+                if (text.charAt(i) != text.charAt(j)) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

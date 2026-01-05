@@ -16,5 +16,15 @@ public class PalindromeCheckerTest {
         assertTrue(result);
     }
 
+    @Test
+    public void simpleLowercasePalindrome_returnsTrueBlanks() {
+        boolean result = PalindromeChecker.isPalindrome("anna ");
+        assertTrue(result);
+    }
+    @Test
+    public void simpleLowercasePalindrome_returnsTrueUppercase() {
+        boolean result = PalindromeChecker.isPalindrome("AnNa");
+        assertTrue(result);
+    }
     // TODO: weitere Testfälle ergänzen
 }
