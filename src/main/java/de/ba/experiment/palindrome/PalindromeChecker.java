@@ -4,9 +4,9 @@ public class PalindromeChecker {
 
     /**
      * Prüft, ob ein gegebener String ein Palindrom ist.
-     *
+     * <p>
      * Ein Palindrom liest sich vorwärts und rückwärts gleich.
-     *
+     * <p>
      * (Siehe ausführliche Beschreibung in README.md)
      *
      * @param text der zu prüfende Text (kann null sein)
@@ -14,16 +14,22 @@ public class PalindromeChecker {
      */
 
     public static boolean isPalindrome(String text) {
-        // TODO: implementieren
-        text = text.toLowerCase();
-        text = text.replaceAll(" ", "");
-        for (int i = 0; i < text.length(); i++) {
-            for (int j = text.length(); j == 0; j--) {
-                if (text.charAt(i) != text.charAt(j)) {
-                    return false;
-                }
+        if (text == null) {
+            return false;
+        }
+
+        text = text.toLowerCase().replaceAll(" ", "");
+
+        if (text.isEmpty()) {
+            return true;
+        }
+
+        for (int i = 0; i < text.length() / 2; i++) {
+            if (text.charAt(i) != text.charAt(text.length() - 1 - i)) {
+                return false;
             }
         }
+
         return true;
     }
 }

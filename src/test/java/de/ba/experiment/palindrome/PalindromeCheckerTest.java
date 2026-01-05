@@ -26,5 +26,26 @@ public class PalindromeCheckerTest {
         boolean result = PalindromeChecker.isPalindrome("AnNa");
         assertTrue(result);
     }
+    @Test
+    public void simpleLowercasePalindrome_returnsTrueEmptyString() {
+        boolean result = PalindromeChecker.isPalindrome("");
+        assertTrue(result);
+    }
+    @Test
+    public void simpleLowercasePalindrome_returnsFalseNull() {
+        boolean result = PalindromeChecker.isPalindrome(null);
+        assertFalse(result);
+    }
+    @Test
+    public void simpleLowercasePalindrome_returnsFalseNoPalindrome() {
+        boolean result = PalindromeChecker.isPalindrome("null");
+        assertFalse(result);
+    }
+    @Test
+    public void simpleLowercasePalindrome_returnsTrue1Letter() {
+        boolean result = PalindromeChecker.isPalindrome("N");
+        assertTrue(result);
+    }
+
     // TODO: weitere Testfälle ergänzen
 }
